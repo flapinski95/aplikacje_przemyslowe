@@ -1,0 +1,117 @@
+Instrukcja uruchomienia i testowania projektu TechCorp Employee Management
+
+1️⃣ Wymagania wstępne
+
+Przed uruchomieniem upewnij się, że masz zainstalowane:
+	•	Java 21 lub nowsza
+	•	Apache Maven 3.9+
+	•	Połączenie z Internetem (potrzebne do pobrania zależności i danych z API)
+
+⸻
+
+2️⃣ Struktura katalogów
+
+Po rozpakowaniu lub sklonowaniu projektu, upewnij się, że masz poniższą strukturę:
+
+Aplikacje Przemyslowe/
+├── pom.xml
+├── src/
+│   ├── main/
+│   │   ├── java/org/techcorp/
+│   │   │   ├── TechCorpApplication.java
+│   │   │   ├── service/…
+│   │   │   ├── models/…
+│   │   │   ├── exception/…
+│   │   │   └── config/AppConfig.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       ├── employees-beans.xml
+│   │       └── employees.csv
+│   └── test/
+│       └── java/… (opcjonalnie)
+
+⸻
+
+3️⃣ Konfiguracja aplikacji
+
+W pliku src/main/resources/application.properties znajdują się podstawowe ustawienia:
+
+app.import.csv-file=employees.csv
+app.api.url=https://jsonplaceholder.typicode.com/users
+logging.level.root=INFO
+
+Upewnij się, że plik employees.csv znajduje się w katalogu src/main/resources/.
+
+⸻
+
+4️⃣ Uruchomienie aplikacji
+
+🔹 Sposób 1: z konsoli (zalecany)
+
+Otwórz terminal w katalogu projektu i wpisz:
+
+mvn clean spring-boot:run
+
+Maven automatycznie:
+	•	pobierze zależności,
+	•	skompiluje projekt,
+	•	uruchomi aplikację Spring Boot.
+
+🔹 Sposób 2: z IDE (np. IntelliJ IDEA / Eclipse)
+
+Otwórz projekt w IDE, znajdź plik:
+src/main/java/org/techcorp/TechCorpApplication.java
+i uruchom go klikając Run ▶️.
+
+⸻
+
+5️⃣ Oczekiwany wynik po uruchomieniu
+
+Jeśli wszystko działa poprawnie, w konsoli powinno pojawić się coś podobnego:
+
+=== TechCorp Employee Management ===
+
+CSV Import Summary: ImportSummary{importedCount=1, errors=[Line 3: Salary cannot be lower than base salary for position: STAZYSTA, Line 4: Salary cannot be lower than base salary for position: MANAGER]}
+
+Added XML employees: 2
+Fetched 10 employees from API.
+
+— Salary consistency issues —
+
+— Company statistics —
+TechCorp -> CompanyStatistics{employeeCount=3, averageSalary=10000.0, topEarner=‘Jan Kowalski’}
+
+=== Application finished ===
+
+To oznacza, że:
+	•	✅ plik CSV został wczytany,
+	•	✅ pracownicy z XML zostali dodani,
+	•	✅ dane z API zostały pobrane,
+	•	✅ obliczono statystyki i średnie pensje.
+
+⸻
+
+6️⃣ Testowanie działania aplikacji
+
+Aplikacja nie ma interfejsu graficznego — test odbywa się przez obserwację logów w konsoli.
+Kolejność testów działania:
+	1.	Import z pliku employees.csv → w konsoli pojawi się CSV Import Summary
+	2.	Wczytanie beanów z employees-beans.xml → w konsoli Added XML employees: 2
+	3.	Pobranie pracowników z API → w konsoli Fetched 10 employees from API
+	4.	Walidacja pensji → sekcja --- Salary consistency issues ---
+	5.	Analiza statystyczna → sekcja --- Company statistics ---
+
+Jeśli wszystkie sekcje wyświetlają się bez błędów i kończy się komunikatem:
+=== Application finished ===
+to aplikacja działa prawidłowo.
+
+⸻
+
+7️⃣ (Opcjonalnie) Uruchomienie testów jednostkowych
+
+Jeśli w projekcie są testy JUnit (src/test/java/...), możesz je uruchomić komendą:
+
+mvn test
+
+Wynik powinien zakończyć się komunikatem:
+BUILD SUCCESS
