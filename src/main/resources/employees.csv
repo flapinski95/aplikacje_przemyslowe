@@ -1,4 +1,16 @@
 firstName,lastName,email,company,position,salary
 Adam,Nowak,adam.nowak@techcorp.com,TechCorp,PROGRAMISTA,9000
-Beata,Kowal,beata.kowal@techcorp.com,TechCorp,STAZYSTA,2900
-Jan,Testowy,jan.testowy@othercorp.com,OtherCorp,MANAGER,11000
+Beata,Kowal,beata.kowal@techcorp.com,TechCorp,STAZYSTA,3000
+Jan,Testowy,jan.testowy@othercorp.com,OtherCorp,MANAGER,12000
+Ewa,Polak,ewa.polak@fintech.io,FinTech Solutions,PROGRAMISTA,8500
+Marek,Kaczmarek,marek.kaczmarek@softline.pl,SoftLine,PROGRAMISTA,9500
+Joanna,Nowicka,joanna.nowicka@softline.pl,SoftLine,MANAGER,13000
+Tomasz,Wójcik,tomasz.wojcik@alphacorp.com,AlphaCorp,WICEPREZES,18500
+Karolina,Borowska,karolina.borowska@alphacorp.com,AlphaCorp,PROGRAMISTA,8200
+Paweł,Grabowski,pawel.grabowski@alphacorp.com,AlphaCorp,PREZES,26000
+Julia,Lis,julia.lis@innotech.eu,InnoTech,STAZYSTA,3100
+Patryk,Zieliński,patryk.zielinski@innotech.eu,InnoTech,PROGRAMISTA,8800
+Magda,Kurek,magda.kurek@innotech.eu,InnoTech,MANAGER,12500
+Kamil,Pawlak,kamil.pawlak@alphacorp.com,AlphaCorp,STAZYSTA,3200
+Natalia,Czerwińska,natalia.czerwinska@fintech.io,FinTech Solutions,WICEPREZES,19000
+Piotr,Adamski,piotr.adamski@othercorp.com,OtherCorp,PROGRAMISTA,8700

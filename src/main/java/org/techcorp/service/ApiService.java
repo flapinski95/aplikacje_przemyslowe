@@ -20,14 +20,12 @@ public class ApiService {
     private final Gson gson;
     private final String apiUrl;
 
-    // ✅ Spring wstrzyknie HttpClient i Gson z AppConfig oraz adres URL z application.properties
     public ApiService(HttpClient httpClient, Gson gson, @Value("${app.api.url}") String apiUrl) {
         this.httpClient = httpClient;
         this.gson = gson;
         this.apiUrl = apiUrl;
     }
 
-    // ✅ Pobieranie listy pracowników z zewnętrznego API
     public List<Employee> fetchEmployeesFromApi() throws ApiException {
         try {
             HttpRequest request = HttpRequest.newBuilder(URI.create(apiUrl)).GET().build();
